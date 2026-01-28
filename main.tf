@@ -31,6 +31,9 @@ resource "random_string" "uniquestring" {
 resource "azurerm_resource_group" "rg" {
   name     = "811-3fe70176-provide-continuous-delivery-with-gith"
   location = "southcentralus"
+  tags = {
+    yor_trace = "fed7eb7c-3408-4549-ba9f-7a8d44c3a8c7"
+  }
 }
 
 resource "azurerm_storage_account" "storageaccount" {
@@ -39,4 +42,7 @@ resource "azurerm_storage_account" "storageaccount" {
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
+  tags = {
+    yor_trace = "eaba4b89-7b11-41e2-bcdf-3fcb312591c2"
+  }
 }
